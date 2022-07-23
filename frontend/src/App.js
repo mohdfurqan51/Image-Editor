@@ -38,6 +38,7 @@ function App() {
     <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
 
     <Routes>
+          <Route element={<Home />} path="/"/>
           <Route element={<Home></Home>} path="/home"/>
     </Routes>
     </BrowserRouter>
