@@ -3,8 +3,13 @@ import { Formik } from 'formik';
 import Swal from "sweetalert2";
 import Navbar from './Navbar';
 import './css/login.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
+
     const userSubmit = async (formdata) => {
       console.log(formdata);
   
@@ -22,6 +27,11 @@ const Login = () => {
           icon : 'success',
           title : 'Login Successful',
           text : 'You are now logged in'
+        })
+        res.json().then(data => {
+          console.log(data);
+          sessionStorage.setItem('user', JSON.stringify(data));
+          navigate('/editor');
         })
       } else if(res.status === 400) {
         Swal.fire({

@@ -54,7 +54,8 @@ const Signup = () => {
         name : '',
         password : '',
         mobile : '',
-        email : ''
+        email : '',
+        age : '',
     }} onSubmit={userSubmit} validationSchema={SignupSchema}>
         {({values, handleChange, handleSubmit, errors}) => (
              <form onSubmit={handleSubmit}>
