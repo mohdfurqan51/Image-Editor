@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbName = "mytestdb";
+const dbName = "imageeditor";
 const dbUrl = `mongodb+srv://mohdfurqan:F81769918@cluster0.mfse9nf.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 

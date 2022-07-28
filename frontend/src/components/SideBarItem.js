@@ -8,6 +8,7 @@ function SidebarItem({name, active, handleClick}) {
     >
       {name}
     </button>
+
   ) 
 }
 
