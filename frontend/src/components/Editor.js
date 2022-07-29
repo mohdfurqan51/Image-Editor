@@ -3,10 +3,11 @@ import SidebarItem from "./SideBarItem"
 import Slider from "./Slider"
 import DEFAULT_OPTIONS from "./DefaultOptions"
 import Navbar from "./Navbar"
+import Filters from "./Filters"
 
 const Home = () => {
-  const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
-  const [options, setOptions] = useState(DEFAULT_OPTIONS)
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
+  const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const selectedOption = options[selectedOptionIndex];
   const [filterName, setFilterName] = useState("");
   const [filterArray, setFilterArray] = useState(null);
@@ -25,9 +26,9 @@ const Home = () => {
     })
   }
 
-  useEffect(() => {
-    getUserFilter();
-  }, [])
+  // useEffect(() => {
+  //   getUserFilter();
+  // }, [])
   
 
   function handleSliderChange({ target }) {
@@ -71,11 +72,14 @@ const Home = () => {
       <Navbar />
       <div className="editor-container">
         <input className="form-control" onChange={e => setFilterName(e.target.value)} />
+        
         <button className="btn btn-primary" onClick={saveCustomFilter}>
           Save Filter
         </button>
         <div className="main-image" style={getImageStyle()} />
+        
         <div className="sidebar">
+        
           {options.map((option, index) => {
             return (
               <SidebarItem
@@ -84,9 +88,15 @@ const Home = () => {
                 active={index === selectedOptionIndex}
                 handleClick={() => setSelectedOptionIndex(index)}
               />
+              
             )
           })}
         </div>
+
+        
+        <Filters/>
+     
+
         <Slider
           min={selectedOption.range.min}
           max={selectedOption.range.max}
