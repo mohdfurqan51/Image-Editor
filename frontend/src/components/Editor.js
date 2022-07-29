@@ -10,26 +10,23 @@ const Home = () => {
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const selectedOption = options[selectedOptionIndex];
   const [filterName, setFilterName] = useState("");
-  const [filterArray, setFilterArray] = useState(null);
-  const [loading, setLoading] = useState(false);
+  
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
 
-  const getUserFilter = () => {
-    setLoading(true);
-    fetch("http://localhost:5000/filter/getbyuser/"+currentUser._id)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      setFilterArray(data);
-      setLoading(false);
-    })
-  }
-
-  // useEffect(() => {
-  //   getUserFilter();
-  // }, [])
+  const [filterArray, setFilterArray] = useState([]);
+  const [loading, setLoading] = useState(false);
   
+  const getUserFilter = () => {
+    setLoading(true)
+    fetch("http://localhost:5000/filter/getbyuser/" + currentUser._id)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setFilterArray(data)
+        setLoading(false)
+      })
+  }
 
   function handleSliderChange({ target }) {
     setOptions((prevOptions) => {
@@ -64,6 +61,9 @@ const Home = () => {
         createdBy: currentUser._id,
         createdAt: new Date(),
       }),
+    }).then(res => {
+      console.log(res)
+      getUserFilter()
     })
   }
 
@@ -94,7 +94,7 @@ const Home = () => {
         </div>
 
         
-        <Filters/>
+        <Filters loading={loading} getUserFilter={getUserFilter} userid={currentUser._id} setOptions={setOptions} filterArray={filterArray} setFilterArray = {setFilterArray}/>
      
 
         <Slider
