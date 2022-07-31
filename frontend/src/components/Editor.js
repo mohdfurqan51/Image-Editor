@@ -70,13 +70,13 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="editor-container">
+      <div className="editor-container editor-background">
         <input className="form-control" onChange={e => setFilterName(e.target.value)} />
         
         <button className="btn btn-primary" onClick={saveCustomFilter}>
           Save Filter
         </button>
-        <div className="main-image" style={getImageStyle()} />
+        <div className="main-image mt-5" style={getImageStyle()} />
         
         <div className="sidebar">
         
