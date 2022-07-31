@@ -67,6 +67,22 @@ const Home = () => {
     })
   }
 
+  const uploadImage = (e) => {
+    const file = e.target.files[0]
+    // setSelThumbnail(file.name)
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch("http://localhost:5000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      console.log(res.status)
+      if (res.status === 200) {
+        console.log("uploaded")
+      }
+    })
+  }
+
   
   return (
     <div>
