@@ -18,6 +18,7 @@ const port = 5000;
 
 const userRouter = require('./routers/userRouter');
 const filterRouter = require('./routers/filterRouter');
+const utilRouter = require('./routers/util');
 const cors = require('cors');
 
 
@@ -27,6 +28,7 @@ app.use( cors({origin : ['http://localhost:3000']}));
 // middleware
 app.use('/user', userRouter);
 app.use('/filter', filterRouter);
+app.use('/util', utilRouter);
 
 
 app.get('/add', (req, res) => {

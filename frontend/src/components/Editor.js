@@ -82,11 +82,11 @@ const Home = () => {
       }
     })
   }
-
   
   return (
     <div>
       <Navbar />
+      <input type="file" onChange={e => uploadImage(e)} />
       <div className="editor-container editor-background">
         <input className="form-control" onChange={e => setFilterName(e.target.value)} />
         
