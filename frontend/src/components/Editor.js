@@ -10,6 +10,8 @@ const Home = () => {
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const selectedOption = options[selectedOptionIndex];
   const [filterName, setFilterName] = useState("");
+
+  const [mainImg, setMainImg] = useState("https://source.unsplash.com/EwKXn5CapA4");
   
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
@@ -42,7 +44,10 @@ const Home = () => {
       return `${option.property}(${option.value}${option.unit})`
     })
 
-    return { filter: filters.join(" ") }
+    // filters.push(`url(${mainImg})`);
+    // console.log({ filter: filters.join(" ") });
+
+    return { filter: filters.join(" "), backgroundImage: `url(${mainImg})` };
   }
 
   const saveCustomFilter = () => {
@@ -79,6 +84,10 @@ const Home = () => {
       console.log(res.status)
       if (res.status === 200) {
         console.log("uploaded")
+        res.json().then((data) => {
+          console.log(data);
+          setMainImg(data.url)
+        })
       }
     })
   }

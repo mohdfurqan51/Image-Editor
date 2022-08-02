@@ -30,6 +30,8 @@ app.use('/user', userRouter);
 app.use('/filter', filterRouter);
 app.use('/util', utilRouter);
 
+app.use(express.static('./static/uploads'));
+
 
 app.get('/add', (req, res) => {
     res.send('Response from Express!');
