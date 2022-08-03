@@ -6,17 +6,22 @@ import Navbar from "./Navbar"
 import Filters from "./Filters"
 
 const Home = () => {
-  const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
-  const [options, setOptions] = useState(DEFAULT_OPTIONS);
-  const selectedOption = options[selectedOptionIndex];
-  const [filterName, setFilterName] = useState("");
-  
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
+  const [options, setOptions] = useState(DEFAULT_OPTIONS)
+  const selectedOption = options[selectedOptionIndex]
+  const [filterName, setFilterName] = useState("")
+
+  const [mainImg, setMainImg] = useState("https://source.unsplash.com/EwKXn5CapA4")
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
 
-  const [filterArray, setFilterArray] = useState([]);
+  const [filterArray, setFilterArray] = useState([])
   const [loading, setLoading] = useState(false);
-  
+
+  const updateFilter = () => {
+
+  }
+
   const getUserFilter = () => {
     setLoading(true)
     fetch("http://localhost:5000/filter/getbyuser/" + currentUser._id)
@@ -42,12 +47,14 @@ const Home = () => {
       return `${option.property}(${option.value}${option.unit})`
     })
 
-    return { filter: filters.join(" ") }
+    // filters.push(`url(${mainImg})`);
+    // console.log({ filter: filters.join(" ") });
+
+    return { filter: filters.join(" "), backgroundImage: `url(${mainImg})` }
   }
 
   const saveCustomFilter = () => {
-
-    console.log(options);
+    console.log(options)
 
     fetch("http://localhost:5000/filter/add", {
       method: "POST",
@@ -61,25 +68,45 @@ const Home = () => {
         createdBy: currentUser._id, 
         createdAt: new Date(),
       }),
-    }).then(res => {
+    }).then((res) => {
       console.log(res)
       getUserFilter()
+    })
+  }
+
+  const uploadImage = (e) => {
+    const file = e.target.files[0]
+    // setSelThumbnail(file.name)
+    const fd = new FormData()
+    fd.append("myfile", file)
+    fetch("http://localhost:5000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      console.log(res.status)
+      if (res.status === 200) {
+        console.log("uploaded")
+        res.json().then((data) => {
+          console.log(data)
+          setMainImg(data.url)
+        })
+      }
     })
   }
 
   return (
     <div>
       <Navbar />
+      <input type="file" onChange={(e) => uploadImage(e)} />
       <div className="editor-container editor-background">
-        <input className="form-control" onChange={e => setFilterName(e.target.value)} />
-        
+        <input className="form-control" onChange={(e) => setFilterName(e.target.value)} />
+
         <button className="btn btn-primary" onClick={saveCustomFilter}>
           Save Filter
         </button>
         <div className="main-image mt-5" style={getImageStyle()} />
-        
+
         <div className="sidebar">
-        
           {options.map((option, index) => {
             return (
               <SidebarItem
@@ -88,21 +115,31 @@ const Home = () => {
                 active={index === selectedOptionIndex}
                 handleClick={() => setSelectedOptionIndex(index)}
               />
-              
             )
           })}
         </div>
 
-        
-        <Filters loading={loading} getUserFilter={getUserFilter} userid={currentUser._id} setOptions={setOptions} filterArray={filterArray} setFilterArray = {setFilterArray}/>
-     
+        <Filters
+          loading={loading}
+          getUserFilter={getUserFilter}
+          userid={currentUser._id}
+          setOptions={setOptions}
+          filterArray={filterArray}
+          setFilterArray={setFilterArray}
+        />
 
-        <Slider
+        <div className="card">
+          <div className="card-body">
+            
+          </div>
+        </div>
+
+        {/* <Slider
           min={selectedOption.range.min}
           max={selectedOption.range.max}
           value={selectedOption.value}
           handleChange={handleSliderChange}
-        />
+        /> */}
       </div>
     </div>
   )
