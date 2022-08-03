@@ -58,7 +58,7 @@ const Home = () => {
         name: filterName,
         image: "",
         values: options,
-        createdBy: currentUser._id,
+        createdBy: currentUser._id, 
         createdAt: new Date(),
       }),
     }).then(res => {

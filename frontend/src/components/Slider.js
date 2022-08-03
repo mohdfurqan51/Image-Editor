@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Slider({min, max, value, handleChange}) {
+
+ 
   return (
     <div className='slider-container'>
         <input 
