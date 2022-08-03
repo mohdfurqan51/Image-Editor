@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react"
 import "./css/filters.css"
 
 const Filters = ({ userid, setOptions, filterArray, setFilterArray, getUserFilter, loading }) => {
-  const img =
-    "https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-  const url = "http://localhost:5000";
+    const url = "http://localhost:5000";
   
 
   
@@ -31,19 +29,31 @@ const Filters = ({ userid, setOptions, filterArray, setFilterArray, getUserFilte
   const showFilters = () => {
     if (!loading)
       return filterArray.map((filter) => (
-        <div className="col-md-2" onClick={e => setOptions([...filter.values]) }>
-          <img className="img-fluid filterSize d-block m-auto" src={img} alt="" />
-          <p className="text-center">{filter.name}</p>
-          <button className="btn btn-danger" onClick={e => deleteFilter(filter._id)}>
-            <i className="fas fa-trash-alt"></i>
-          </button>
+        <div className="card">
+          <i onClick={e => deleteFilter(filter._id)} class=" fa-solid fa-circle-xmark del-btn" style={{position: 'absolute', zIndex: '5', right: '-15px', top: '10px'}}></i>
+          
+          
+        <div class="bg-image hover-zoom ripple shadow-1-strong rounded mt-4" onClick={e => setOptions([...filter.values]) }>
+          <img src={filter.image}
+            class="w-100" alt="" />
+          <a href="#!">
+            <div class="mask" style={{backgroundColor: 'rgba(0, 0, 0, 0.3)'}}>
+              <div class="d-flex justify-content-start align-items-start h-100">
+                <h5><span class="badge bg-light pt-2 ms-3 mt-3 text-dark">{filter.name}</span></h5>
+                              </div>
+            </div>
+            <div class="hover-overlay">
+              <div class="mask" style={{backgroundColor: 'rgba(253, 253, 253, 0.15)'}}></div>
+            </div>
+          </a>
+        </div>
         </div>
       ))
   }
 
   return (
-    <div className="container filter">
-      <div className="row mt-4 mb-4">{showFilters()}</div>
+    <div>
+        {showFilters()}
     </div>
   )
 }

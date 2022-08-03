@@ -7,6 +7,7 @@ import Editor from "./components/Editor"
 import Signup from "./components/Signup"
 import DragDrop from "./components/DragDrop"
 import Authorisor from "./components/Auth"
+import ImageEditor from "./components/ImageEditor"
 
 function App() {
   return (
@@ -22,6 +23,14 @@ function App() {
             </Authorisor>
           }
           path="/editor"
+        />
+        <Route
+          element={
+            <Authorisor>
+              <ImageEditor />
+            </Authorisor>
+          }
+          path="/imgeditor"
         />
         <Route element={<Signup></Signup>} path="/signup" />
         <Route element={<DragDrop></DragDrop>} path="/dragdrop" />
