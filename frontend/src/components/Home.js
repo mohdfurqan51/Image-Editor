@@ -11,7 +11,7 @@ const Home = () => {
         <div
           className="p-5 text-center bg-image"
           style={{
-                  backgroundImage: `url('https://mdbootstrap.com/img/new/textures/full/142.jpg')`,
+                  backgroundImage: `url('https://www.sodapdf.com/blog/wp-content/uploads/2018/06/best-free-photo-editing-software.jpg')`,
                   height: "500px",
                   backgroundSize: "cover",
                   backgroundPosition: "50% 50%",
@@ -26,15 +26,15 @@ const Home = () => {
           <div
             className="card mx-4 mx-md-5 text-center shadow-5-strong"
             style={{
-                    marginTop: "-170px",
+                    marginTop: "-120px",
                     background: "hsla(0, 0%, 100%, 0.7)",
                     backdropFilter: "blur(30px)"
                   }}
           >
             <div className="card-body px-4 py-5 px-md-5">
               <h1 className="display-3 fw-bold ls-tight mb-4">
-                <span>The best offer on the market</span> <br />
-                <span className="text-primary">for your business</span>
+                <span>The best <span className="text-primary">Image Editor</span> on the market</span> <br />
+                <span >for your photos</span>
               </h1>
               <a
                 className="btn btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
@@ -64,7 +64,7 @@ const Home = () => {
         <section draggable="false" className="container pt-5" data-v-271253ee="">
           <section className="mb-10 text-center">
             <h2 className="fw-bold mb-5 text-center">
-              <span className="me-1">Why is it so</span>
+              <span className="me-1 ">Why is it so</span>
               <u className="text-primary">great?</u>
             </h2>
             <div className="row gx-lg-5">
@@ -77,9 +77,9 @@ const Home = () => {
                 </div>
                 <h5 className="fw-bold mb-3">Support 24/7</h5>
                 <p className="text-muted mb-0">
-                  Laudantium totam quas cumque pariatur at doloremque hic quos
-                  quia eius. Reiciendis optio minus mollitia rerum labore
-                  facilis inventore voluptatem ad, quae quia sint. Ullam.
+                  We provide 24/7 support if you face any difficulty while using our product.
+                  Edit your image, share on social media and enjoy. This is the best Image Editor 
+                  on the market. 
                 </p>
               </div>
               <div className="col-md-4 mb-5 mb-md-0">
@@ -89,11 +89,10 @@ const Home = () => {
                     aria-controls="#picker-editor"
                   ></i>
                 </div>
-                <h5 className="fw-bold mb-3">Safe and solid</h5>
+                <h5 className="fw-bold mb-3">Security</h5>
                 <p className="text-muted mb-0">
-                  Eum nostrum fugit numquam, voluptates veniam neque quibusdam
-                  ullam aspernatur odio soluta, quisquam dolore animi mollitia a
-                  omnis praesentium, expedita nobis!
+                  This app is extremely secure. Your photos are safely stored in our database 
+                  so that next time you login you will find it here.
                 </p>
               </div>
               <div className="col-md-4 mb-5 mb-md-0">
@@ -103,11 +102,10 @@ const Home = () => {
                     aria-controls="#picker-editor"
                   ></i>
                 </div>
-                <h5 className="fw-bold mb-3">Extremely fast</h5>
+                <h5 className="fw-bold mb-3">Features</h5>
                 <p className="text-muted mb-0">
-                  Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-                  ullam beatae hic voluptatibus dolores exercitationem? Facilis
-                  debitis aspernatur amet nisi?
+                  This web app has many features - applying custom filters on your images and
+                  save those filters to be used on other images. 
                 </p>
               </div>
             </div>

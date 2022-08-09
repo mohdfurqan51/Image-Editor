@@ -7,7 +7,8 @@ const DEFAULT_OPTIONS = [
         min: 0,
         max: 200
       },
-      unit: '%'
+      unit: '%',
+      backgroundColor: "#85D2CB"
     },
     {
       name: 'Contrast',
@@ -17,7 +18,8 @@ const DEFAULT_OPTIONS = [
         min: 0,
         max: 200
       },
-      unit: '%'
+      unit: '%',
+      backgroundColor: "#85D2CB"
     },
     {
       name: 'Saturation',
@@ -27,7 +29,8 @@ const DEFAULT_OPTIONS = [
         min: 0,
         max: 200
       },
-      unit: '%'
+      unit: '%',
+      backgroundColor: "#E8A87C"
     },
     {
       name: 'Grayscale',
@@ -37,7 +40,8 @@ const DEFAULT_OPTIONS = [
         min: 0,
         max: 100
       },
-      unit: '%'
+      unit: '%',
+      backgroundColor: "#C38D9E"
     },
     {
       name: 'Sepia',
@@ -47,7 +51,8 @@ const DEFAULT_OPTIONS = [
         min: 0,
         max: 100
       },
-      unit: '%'
+      unit: '%',
+      backgroundColor: "#E27D60"
     },
     {
       name: 'Hue Rotate',
@@ -57,7 +62,8 @@ const DEFAULT_OPTIONS = [
         min: 0,
         max: 360
       },
-      unit: 'deg'
+      unit: 'deg',
+      backgroundColor: "#41B3A3"
     },
     {
       name: 'Blur',
@@ -67,7 +73,8 @@ const DEFAULT_OPTIONS = [
         min: 0,
         max: 20
       },
-      unit: 'px'
+      unit: 'px',
+      backgroundColor: "#E27D60"
     }
   ]
 

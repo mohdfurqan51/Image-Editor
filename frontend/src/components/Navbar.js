@@ -21,8 +21,9 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <a className="navbar-brand mt-2 mt-lg-0" href="#">
             <img
-              src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-              height="15"
+              src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/photo-editor-app-icon-design-template-4422455fe13e1c4e7008958f0b058eb5_screen.jpg?ts=1577021462"
+              height="40"
+              width="40"
               alt="MDB Logo"
               loading="lazy"
             />
@@ -35,7 +36,7 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/editor">
+              <NavLink className="nav-link" to="/imageeditor">
                 Editor
               </NavLink>
             </li>

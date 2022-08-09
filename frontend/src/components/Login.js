@@ -31,7 +31,7 @@ const Login = () => {
         res.json().then(data => {
           console.log(data);
           sessionStorage.setItem('user', JSON.stringify(data));
-          navigate('/editor');
+          navigate('/dragdrop');
         })
       } else if(res.status === 400) {
         Swal.fire({

@@ -1,8 +1,11 @@
 import React from "react"
 import "./css/dragdrop.css"
+import "./ImageEditor"
 
 const DragDrop = () => {
   return (
+    <div className="background">
+    <div className="drag-resize">
     <div className="upload">
       <div className="upload-files">
         <header>
@@ -12,7 +15,9 @@ const DragDrop = () => {
             <span className="load">load</span>
           </p>
         </header>
-        <div className="body" id="drop">
+        <div className="body" id="drop" onDrop={e => {
+          console.log(e.target.files[0].name)
+        }}>
           <i className="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
           <p className="pointer-none">
             <b>Drag and drop</b> files here <br /> or{" "}
@@ -31,6 +36,8 @@ const DragDrop = () => {
           <button className="importar">UPDATE FILES</button>
         </footer>
       </div>
+    </div>
+    </div>
     </div>
   )
 }

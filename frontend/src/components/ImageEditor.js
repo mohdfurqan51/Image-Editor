@@ -3,11 +3,13 @@ import Swal from "sweetalert2"
 import DEFAULT_OPTIONS from "./DefaultOptions"
 import Filters from "./Filters"
 import "./imageeditor.css"
+import Navbar from "./Navbar"
 
 const FilterSlider = ({ options, updateFilterOptions, index }) => {
   return (
     <div>
-      <label class="form-label" for={options.property}>
+    <div className="p-3 fw-bold radius-curve" style={{background: "#1a3847"}}>
+      <label class="form-label text-white" for={options.property}>
         {options.name}
         {"   :   "}
         <span class="form-label-small">{options.value}</span>
@@ -21,8 +23,10 @@ const FilterSlider = ({ options, updateFilterOptions, index }) => {
           min={options.range.min}
           max={options.range.max}
           id={options.property}
+          // style={{backgoundColor: options.backgroundColor}}
         />
       </div>
+    </div>
       <hr />
     </div>
   )
@@ -124,13 +128,15 @@ const ImageEditor = () => {
   }
 
   return (
-    <div className="editor-cont">
-      <p className="page-title">Image Editor</p>
+    <div>
+    <Navbar/>
+    <div className="editor-cont" style={{background: "#1a3847"}}>
+      <p className="page-title" style={{color: "white"}}>Image Editor</p>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">
             <div className="card saved-filters">
-              <div className="card-body">
+              <div className="card-body" style={{background: "#EEDD82"}}>
                 <h5 className="text-center fw-bold">Available Filters</h5>
                 <hr />
                 <Filters
@@ -144,22 +150,22 @@ const ImageEditor = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-7">
-            <div className="card editor">
+          <div className="col-md-7" >
+            <div className="card editor" style={{background: "#EEDD82"}}>
               <div className="card-body">
-                <label htmlFor="uploader" className="bg-warning drag-drop" onDrop={(e) => {
+                <label htmlFor="uploader" className="drag-drop" style={{background: "#1a3847", color: "white"}} onDrop={(e) => {
                     e.preventDefault()
                     console.log(e.type);}}>
-                    Drag and drop OR Select a file
+                    <b>Select File</b>
                 </label>
-                <input hidden id="uploader" type="file" onChange={(e) => uploadImage(e)} />
+                <input className="" hidden id="uploader" type="file" onChange={(e) => uploadImage(e)} />
                 <div className="editor-image mt-2" style={getImageStyle()} />
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card editor-toolbox">
-              <div className="card-body">
+              <div className="card-body" style={{background: "#EEDD82"}}>
                 <div class="accordion" id="accordion-filter">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-filter">
@@ -178,7 +184,7 @@ const ImageEditor = () => {
                       class="accordion-collapse collapse show"
                       aria-labelledby="heading-filter"
                       data-mdb-parent="#accordion-filter">
-                      <div class="accordion-body">
+                      <div class="">
                         {options.map((option, index) => (
                           <FilterSlider options={option} updateFilterOptions={updateFilters} index={index} />
                         ))}
@@ -219,6 +225,7 @@ const ImageEditor = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

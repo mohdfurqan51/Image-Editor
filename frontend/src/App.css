@@ -93,3 +93,10 @@ body {
   background-color: grey;
   background-size: cover;
 }
+
+.drag-resize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

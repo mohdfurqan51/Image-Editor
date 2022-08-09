@@ -343,3 +343,8 @@
     height: 100%;
   }
 }
+
+.background {
+  background-image: url("https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhaW58ZW58MHx8MHx8&w=1000&q=80");
+  background-size: cover;
+}

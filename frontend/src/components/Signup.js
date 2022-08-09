@@ -66,7 +66,8 @@ const Signup = () => {
                 <div className="card-body py-5 px-md-5">
                   <Formik
                     initialValues={{
-                      name: "",
+                      firstname: "",
+                      lastname: "",
                       password: "",
                       mobile: "",
                       email: "",
@@ -77,7 +78,32 @@ const Signup = () => {
                   >
                     {({ values, handleChange, handleSubmit, errors }) => (
                       <form onSubmit={handleSubmit}>
-                        {/* Email input */}
+                        <div className="form-outline mb-4">
+                    
+                          <TextField
+                            value={values.firstname}
+                            onChange={handleChange}
+                            id="firstname"
+                            sx={{ mt: 5 }}
+                            fullWidth
+                            label="FirstName"
+                            type="text"
+                            className="form-control"
+                          />
+                          </div>
+                        <div className="form-outline mb-2">
+                          <TextField
+                            value={values.firstname}
+                            onChange={handleChange}
+                            id="firstname"
+                            sx={{ mt: 5 }}
+                            fullWidth
+                            label="FirstName"
+                            type="text"
+                            className="form-control"
+                          />
+                          </div>
+                        
                         <div className="form-outline mb-4">
                           <TextField
                             value={values.email}
@@ -90,7 +116,6 @@ const Signup = () => {
                             // id="form2Example1"
                             className="form-control"
                           />
-                          
                         </div>
                         {/* Password input */}
                         <div className="form-outline mb-4">
@@ -104,7 +129,6 @@ const Signup = () => {
                             type="password"
                             className="form-control"
                           />
-                          
                         </div>
                         {/* 2 column grid layout for inline styling */}
                         <div className="row mb-4">

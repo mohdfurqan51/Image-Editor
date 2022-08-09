@@ -30,7 +30,7 @@ function App() {
               <ImageEditor />
             </Authorisor>
           }
-          path="/imgeditor"
+          path="/imageditor"
         />
         <Route element={<Signup></Signup>} path="/signup" />
         <Route element={<DragDrop></DragDrop>} path="/dragdrop" />
