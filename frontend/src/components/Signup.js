@@ -157,13 +157,15 @@ const Signup = () => {
                           </div>
                         </div>
                         {/* Submit button */}
+                        <div style={{textAlign: "center"}}>
                         <button
                           type="submit"
                           sx={{ mt: 5 }}
-                          className="btn btn-primary btn-block mb-4"
+                          className="btn btn-primary mb-4"
                         >
-                          Sign in
+                          Sign up
                         </button>
+                        </div>
                       </form>
                     )}
                   </Formik>

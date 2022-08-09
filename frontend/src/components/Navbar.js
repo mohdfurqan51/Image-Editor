@@ -21,7 +21,7 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <a className="navbar-brand mt-2 mt-lg-0" href="#">
             <img
-              src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/photo-editor-app-icon-design-template-4422455fe13e1c4e7008958f0b058eb5_screen.jpg?ts=1577021462"
+              src="https://www.cyberlink.com/prog/product/img/PhotoDirector_New.png"
               height="40"
               width="40"
               alt="MDB Logo"

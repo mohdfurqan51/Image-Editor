@@ -28,7 +28,7 @@
 }
 
 .editor-image{
-    height: calc(var(--cont-height) - 25vh);
+    height: calc(var(--cont-height) - 10vh);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -55,5 +55,5 @@
 }
 
 .radius-curve {
-    border-radius: 30px;
+    border-radius: 20px;
 }

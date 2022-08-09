@@ -34,7 +34,7 @@ const FilterSlider = ({ options, updateFilterOptions, index }) => {
 
 const ImageEditor = () => {
   const [options, setOptions] = useState(DEFAULT_OPTIONS)
-  const [mainImg, setMainImg] = useState("https://source.unsplash.com/EwKXn5CapA4")
+  const [mainImg, setMainImg] = useState(sessionStorage.getItem('mainImg'))
   const [filterName, setFilterName] = useState("")
   const [filterArray, setFilterArray] = useState([])
   const [loading, setLoading] = useState(false)
@@ -106,26 +106,7 @@ const ImageEditor = () => {
     return { filter: filters.join(" "), backgroundImage: `url(${mainImg})` }
   }
 
-  const uploadImage = (e) => {
-    const file = e.target.files[0]
-    // setSelThumbnail(file.name)
-    const fd = new FormData()
-    fd.append("myfile", file)
-    fetch("http://localhost:5000/util/uploadfile", {
-      method: "POST",
-      body: fd,
-    }).then((res) => {
-      console.log(res.status)
-      if (res.status === 200) {
-        console.log("uploaded")
-        res.json().then((data) => {
-          console.log(data)
-          setMainImg(data.url)
-          sessionStorage.setItem("mainImg", data.url)
-        })
-      }
-    })
-  }
+
 
   return (
     <div>
@@ -153,12 +134,7 @@ const ImageEditor = () => {
           <div className="col-md-7" >
             <div className="card editor" style={{background: "#EEDD82"}}>
               <div className="card-body">
-                <label htmlFor="uploader" className="drag-drop" style={{background: "#1a3847", color: "white"}} onDrop={(e) => {
-                    e.preventDefault()
-                    console.log(e.type);}}>
-                    <b>Select File</b>
-                </label>
-                <input className="" hidden id="uploader" type="file" onChange={(e) => uploadImage(e)} />
+                
                 <div className="editor-image mt-2" style={getImageStyle()} />
               </div>
             </div>
