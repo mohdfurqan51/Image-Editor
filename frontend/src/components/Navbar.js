@@ -44,11 +44,11 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
           </ul>
         </div>
 
-        <div class="d-flex align-items-center">
+        <div className="d-flex align-items-center">
         <NavLink to="/login">
                     <button
                       type="button"
-                      class="btn btn-link px-3 mb-1 me-2"
+                      className="btn btn-link px-3 mb-1 me-2"
                       aria-controls="#picker-editor"
                       
                     >
@@ -58,7 +58,7 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
                     <NavLink to="/signup">
                     <button
                       type="button"
-                      class="btn btn-primary mb-1 me-lg-3"
+                      className="btn btn-primary mb-1 me-lg-3"
                       aria-controls="#picker-editor"
                       
                     >

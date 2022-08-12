@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import "./css/home.css";
 
 const Home = () => {
+
+
   return (
     <div>
       <Navbar />
@@ -38,7 +40,7 @@ const Home = () => {
               </h1>
               <a
                 className="btn btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
-                href="#"
+                href="/login"
                 role="button"
                 aria-controls="#picker-editor"
                 draggable="false"

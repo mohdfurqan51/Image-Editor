@@ -1,3 +1,20 @@
-.shadow { 
-    box-shadow: 5px 10px;
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
 }
+.h-custom {
+height: calc(100% - 73px);
+}
+.buttonStyle {
+    paddingLeft: 2.5rem;
+    paddingRight: 2.5rem;
+  
+}
+/* @media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+} */
