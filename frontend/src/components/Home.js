@@ -3,66 +3,152 @@ import Navbar from "./Navbar";
 import "./css/home.css";
 
 const Home = () => {
-
-
   return (
     <div>
       <Navbar />
 
-      
-        <div
-          className="p-5 text-center bg-image"
-          style={{
-                  backgroundImage: `url('https://www.sodapdf.com/blog/wp-content/uploads/2018/06/best-free-photo-editing-software.jpg')`,
-                  height: "500px",
-                  backgroundSize: "cover",
-                  backgroundPosition: "50% 50%",
-                  backgroundColor: "rgba(0, 0, 0, 0)"
-                }}
-               
-              
-                
-          aria-controls="#picker-editor"></div>
+      <div
+        className="p-5 text-center bg-image"
+        style={{
+          backgroundImage: `url('https://www.sodapdf.com/blog/wp-content/uploads/2018/06/best-free-photo-editing-software.jpg')`,
+          height: "500px",
+          backgroundSize: "cover",
+          backgroundPosition: "50% 50%",
+          backgroundColor: "rgba(0, 0, 0, 0)",
+        }}
+        aria-controls="#picker-editor"
+      ></div>
 
-        <div className="container">
-          <div
-            className="card mx-4 mx-md-5 text-center shadow-5-strong"
-            style={{
-                    marginTop: "-120px",
-                    background: "hsla(0, 0%, 100%, 0.7)",
-                    backdropFilter: "blur(30px)"
-                  }}
-          >
-            <div className="card-body px-4 py-5 px-md-5">
-              <h1 className="display-3 fw-bold ls-tight mb-4">
-                <span>The best <span className="text-primary">Image Editor</span> on the market</span> <br />
-                <span >for your photos</span>
-              </h1>
-              <a
-                className="btn btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
-                href="/login"
-                role="button"
-                aria-controls="#picker-editor"
-                draggable="false"
-              >
-                Get started
-              </a>
-              <a
-                className="btn btn-link btn-lg py-3 px-5 mb-2 mb-md-0"
-                data-ripple-color="primary"
-                href="#"
-                role="button"
-                aria-controls="#picker-editor"
-                draggable="false"
-              >
-                Learn more
-              </a>
-            </div>
+      <div className="container">
+        <div
+          className="card mx-4 mx-md-5 text-center shadow-5-strong"
+          style={{
+            marginTop: "-120px",
+            background: "hsla(0, 0%, 100%, 0.7)",
+            backdropFilter: "blur(30px)",
+          }}
+        >
+          <div className="card-body px-4 py-5 px-md-5">
+            <h1 className="display-3 fw-bold ls-tight mb-4">
+              <span>
+                The best <span className="text-primary">Image Editor</span> on
+                the market
+              </span>{" "}
+              <br />
+              <span>for your photos</span>
+            </h1>
+            <a
+              className="btn btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
+              href="/login"
+              role="button"
+              aria-controls="#picker-editor"
+              draggable="false"
+            >
+              Get started
+            </a>
+            <a
+              className="btn btn-link btn-lg py-3 px-5 mb-2 mb-md-0"
+              data-ripple-color="primary"
+              href="/aboutus"
+              role="button"
+              aria-controls="#picker-editor"
+              draggable="false"
+            >
+              Learn more
+            </a>
           </div>
         </div>
-     
+      </div>
 
-      <div data-draggable="true" style={{position: "relative"}}>
+      <div id="preview" className="preview">
+        <div style={{ display: "none" }} />
+        <div>
+          <div data-draggable="true" style={{ position: "relative" }}>
+            {/**/}
+            {/**/}
+            <section
+              draggable="false"
+              className="container pt-5"
+              data-v-271253ee=""
+            >
+              <section className="mb-10">
+                <h2 className="fw-bold mb-5 text-center">Features</h2>
+                <div className="row gx-lg-5 mb-5 align-items-center">
+                  <div className="col-md-6 mb-4 mb-md-0">
+                    <img
+                      src="https://thumbs.dreamstime.com/b/easy-to-use-inscription-blue-keyboard-key-written-metallic-finger-pressing-185214514.jpg"
+                      className="w-100 shadow-4-strong rounded-4 mb-4"
+                      alt=""
+                      aria-controls="#picker-editor"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-4 mb-md-0">
+                    <h3 className="fw-bold">Easy to use</h3>
+
+                    <p className="text-muted">
+                      This image editor is very easy to use. You just have to
+                      signup with your email and password. Login with your
+                      registered email and you are ready to go. The User
+                      Interface is also very simple with minimalistic
+                      properties. Move the slider to apply the properties and
+                      then save the filter using a single button.
+                    </p>
+                    <p className="text-muted"></p>
+                  </div>
+                </div>
+                <div className="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
+                  <div className="col-md-6 mb-4 mb-md-0">
+                    <img
+                      src="https://www.vidyard.com/media/secure-video-sharing-1920x1080-1.jpg"
+                      className="w-100 shadow-4-strong rounded-4 mb-4"
+                      alt=""
+                      aria-controls="#picker-editor"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-4 mb-md-0">
+                    <h3 className="fw-bold">Security</h3>
+
+                    <p className="text-muted">
+                      This app is extremely secure. Once you upload your photos
+                      to be edited, it gets saved in the mongoDB database. It is
+                      stored with additional layers of security. MongoDB
+                      provides various features, such as authentication, access
+                      control, encryption, to secure your MongoDB deployments.
+                      Some key security features include: Authentication,
+                      Authorization, TLS/SSL, Encryption.
+                    </p>
+                  </div>
+                </div>
+                <div className="row gx-lg-5 mb-5 align-items-center">
+                  <div className="col-md-6 mb-4 mb-md-0">
+                    <img
+                      src="https://www.befunky.com/images/wp/wp-2018-11-Photo-Effects-18.jpg?auto=avif,webp&format=jpg&width=944"
+                      className="w-100 shadow-4-strong rounded-4 mb-4"
+                      alt=""
+                      aria-controls="#picker-editor"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-4 mb-md-0">
+                    <h3 className="fw-bold">Generate Custom Filters</h3>
+
+                    <p className="text-muted">
+                      You can apply different properties like adjusting
+                      Brightness, Contrast, Saturation, Grayscale, Sepia, Hue
+                      Rotate and Blur. After applying these properties you can
+                      create and save a filter with custom name. This filter
+                      gets saved in the database and can be applied on other
+                      images.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </section>
+            {/**/}
+          </div>
+        </div>
+      </div>
+
+      {/* <div data-draggable="true" style={{position: "relative"}}>
         <section draggable="false" className="container pt-5" data-v-271253ee="">
           <section className="mb-10 text-center">
             <h2 className="fw-bold mb-5 text-center">
@@ -113,9 +199,13 @@ const Home = () => {
             </div>
           </section>
         </section>
-      </div>
-      <div data-draggable="true" style={{position: "relative"}}>
-        <section draggable="false" className="container pt-5" data-v-271253ee="">
+      </div> */}
+      <div data-draggable="true" style={{ position: "relative" }}>
+        <section
+          draggable="false"
+          className="container pt-5"
+          data-v-271253ee=""
+        >
           <section className="mb-10 background-radial-gradient">
             <style></style>
             <div className="container px-4 py-5 px-md-5 text-center text-lg-start">
@@ -123,14 +213,16 @@ const Home = () => {
                 <div className="col-lg-6 mb-5 mb-lg-0">
                   <h1
                     className="my-4 display-3 fw-bold ls-tight"
-                    style={{color: "hsl(218, 81%, 95%)"}}
+                    style={{ color: "hsl(218, 81%, 95%)" }}
                   >
                     <span>Do not miss</span> <br />
-                    <span style={{color: "hsl(218, 81%, 75%)"}}>any updates</span>
+                    <span style={{ color: "hsl(218, 81%, 75%)" }}>
+                      any updates
+                    </span>
                   </h1>
                   <p
                     className="mb-4 opacity-70 lead"
-                    style={{color: "hsl(218, 81%, 85%)"}}
+                    style={{ color: "hsl(218, 81%, 85%)" }}
                   >
                     We will write rarely and only high-quality content.
                   </p>
@@ -152,19 +244,18 @@ const Home = () => {
                           />
                           <label
                             className="form-label"
-                            
-                            style={{marginLeft: "0px"}}
+                            style={{ marginLeft: "0px" }}
                           >
                             Name
                           </label>
                           <div className="form-notch">
                             <div
                               className="form-notch-leading"
-                              style={{width: "9px"}}
+                              style={{ width: "9px" }}
                             ></div>
                             <div
                               className="form-notch-middle"
-                              style={{width: "42.4px"}}
+                              style={{ width: "42.4px" }}
                             ></div>
                             <div className="form-notch-trailing"></div>
                           </div>
@@ -178,19 +269,18 @@ const Home = () => {
                           />
                           <label
                             className="form-label"
-                            
-                            style={{marginLeft: "0px"}}
+                            style={{ marginLeft: "0px" }}
                           >
                             Email address
                           </label>
                           <div className="form-notch">
                             <div
                               className="form-notch-leading"
-                              style={{width: "9px"}}
+                              style={{ width: "9px" }}
                             ></div>
                             <div
                               className="form-notch-middle"
-                              style={{width: "88.8px"}}
+                              style={{ width: "88.8px" }}
                             ></div>
                             <div className="form-notch-trailing"></div>
                           </div>
@@ -202,7 +292,6 @@ const Home = () => {
                             type="checkbox"
                             value=""
                             id="form5Example3"
-                            
                           />
                           <label className="form-check-label">
                             I have read and agree to the terms
@@ -225,8 +314,12 @@ const Home = () => {
           </section>
         </section>
       </div>
-      <div data-draggable="true" className="" style={{position: "relative"}}>
-        <section draggable="false" className="container pt-5" data-v-271253ee="">
+      <div data-draggable="true" className="" style={{ position: "relative" }}>
+        <section
+          draggable="false"
+          className="container pt-5"
+          data-v-271253ee=""
+        >
           <section className="mb-10 text-center">
             <div className="p-5">
               <h2 className="my-5 display-5 fw-bold ls-tight">
@@ -236,7 +329,7 @@ const Home = () => {
 
               <a
                 className="btn btn-primary btn-lg me-md-2 mb-3"
-                style={{backgroundColor: "#3b5998"}}
+                style={{ backgroundColor: "#3b5998" }}
                 href="#!"
                 role="button"
               >
@@ -249,7 +342,7 @@ const Home = () => {
 
               <a
                 className="btn btn-primary btn-lg me-md-2 mb-3"
-                style={{backgroundColor: "#55acee"}}
+                style={{ backgroundColor: "#55acee" }}
                 href="#!"
                 role="button"
               >
@@ -262,7 +355,7 @@ const Home = () => {
 
               <a
                 className="btn btn-primary btn-lg me-md-2 mb-3"
-                style={{backgroundColor: "#ed302f"}}
+                style={{ backgroundColor: "#ed302f" }}
                 href="#!"
                 role="button"
               >
@@ -275,7 +368,7 @@ const Home = () => {
 
               <a
                 className="btn btn-primary btn-lg me-md-2 mb-3"
-                style={{backgroundColor: "#ac2bac"}}
+                style={{ backgroundColor: "#ac2bac" }}
                 href="#!"
                 role="button"
               >

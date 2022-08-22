@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const Authorisor = ({children}) => {
+const Auth = ({children}) => {
     const [currentUser, setCurrentUser] = useState(
         JSON.parse(sessionStorage.getItem("user"))
       );
@@ -20,4 +20,4 @@ const Authorisor = ({children}) => {
       return children;
 }
 
-export default Authorisor
+export default Auth

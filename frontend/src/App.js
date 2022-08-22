@@ -6,8 +6,10 @@ import Login from "./components/Login"
 import Editor from "./components/Editor"
 import Signup from "./components/Signup"
 import DragDrop from "./components/DragDrop"
-import Authorisor from "./components/Auth"
+import Auth from "./components/Auth"
 import ImageEditor from "./components/ImageEditor"
+import ContactUs from "./components/ContactUs"
+import AboutUs from "./components/AboutUs"
 
 function App() {
   return (
@@ -18,22 +20,24 @@ function App() {
         <Route element={<Login></Login>} path="/login" />
         <Route
           element={
-            <Authorisor>
+            <Auth>
               <Editor></Editor>
-            </Authorisor>
+            </Auth>
           }
           path="/editor"
         />
         <Route
           element={
-            <Authorisor>
+            <Auth>
               <ImageEditor />
-            </Authorisor>
+            </Auth>
           }
-          path="/imageditor"
+          path="/imageeditor"
         />
         <Route element={<Signup></Signup>} path="/signup" />
         <Route element={<DragDrop></DragDrop>} path="/dragdrop" />
+        <Route element={<ContactUs></ContactUs>} path="/contactus"/>
+        <Route element={<AboutUs></AboutUs>} path="/aboutus"/>
       </Routes>
     </BrowserRouter>
   )

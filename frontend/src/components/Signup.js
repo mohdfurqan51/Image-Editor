@@ -34,7 +34,11 @@ const Signup = () => {
   };
 
   const SignupSchema = Yup.object().shape({
-    name: Yup.string()
+    firstname: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    lastname: Yup.string()
       .min(2, "Too Short!")
       .max(50, "Too Long!")
       .required("Required"),
@@ -63,12 +67,10 @@ const Signup = () => {
                       firstname: "",
                       lastname: "",
                       password: "",
-                      mobile: "",
                       email: "",
-                      age: "",
                     }}
                     onSubmit={userSubmit}
-                    validationSchema={SignupSchema}
+                    // validationSchema={SignupSchema}
                   >
                     {({ values, handleChange, handleSubmit, errors }) => (
                       <form onSubmit={handleSubmit}>

@@ -9,8 +9,8 @@ background: #eee;
 height: calc(100% - 73px);
 }
 .buttonStyle {
-    paddingLeft: 2.5rem;
-    paddingRight: 2.5rem;
+    padding-left: 2.5rem;
+    padding-Right: 2.5rem;
   
 }
 /* @media (max-width: 450px) {

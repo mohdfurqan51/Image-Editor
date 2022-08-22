@@ -4,7 +4,7 @@ import { Switch } from "@mui/material";
 const Navbar = ({ darkTheme, setDarkTheme }) => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -35,9 +35,22 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
                 Home
               </NavLink>
             </li>
+  
             <li className="nav-item">
               <NavLink className="nav-link" to="/imageeditor">
                 Editor
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/contactus">
+                Contact Us
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/aboutus">
+                About Us
               </NavLink>
             </li>
             

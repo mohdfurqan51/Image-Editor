@@ -40,7 +40,7 @@ const Filters = ({ userid, setOptions, filterArray, setFilterArray, getUserFilte
             <div class="mask" style={{backgroundColor: 'rgba(0, 0, 0, 0.3)'}}>
               <div class="d-flex justify-content-start align-items-start h-100">
                 <h5><span class="badge bg-light pt-2 ms-3 mt-3 text-dark">{filter.name}</span></h5>
-                              </div>
+              </div>
             </div>
             <div class="hover-overlay">
               <div class="mask" style={{backgroundColor: 'rgba(253, 253, 253, 0.15)'}}></div>
